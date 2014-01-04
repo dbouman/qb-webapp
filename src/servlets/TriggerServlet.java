@@ -3,27 +3,24 @@ package servlets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
 import util.Constants;
-import util.DbUtils;
-import util.QuestionFile;
 
 /**
- * This servlet is called when the user wants a new question.
+ * This servlet provides a JSON array of triggers based on the trigger file
+ * 
+ * It was designed to limit the amount of AJAX calls needed to check triggers
+ * allowing triggers to easily and quickly be checked. If the trigger file becomes
+ * very large, it would be necessary to modify this servlet to support a parameter 
+ * to be passed in and force the front-end application to make an AJAX call for each
+ * new word.
  */
 public class TriggerServlet extends HttpServlet
 {

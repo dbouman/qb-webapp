@@ -1,7 +1,12 @@
-// global variable to store array of triggers
+/* GLOBAL VARIABLES */
+
+// stores an array of triggers
 var triggers;
+
+// keeps track of words already checked
 var old_words = "";
 
+// Loads in trigger file from servlet
 function getTriggers()
 {
 	block(); // do SimpleModal
@@ -24,6 +29,7 @@ function getTriggerError(request,status,error)
 	alert("No triggers were found!");
 }
 
+// Called every time question is updated, checks only the latest word
 function checkTriggers(words) {
 	if (words) {
 		//Check only one word at a time
@@ -40,6 +46,8 @@ function checkTriggers(words) {
 		old_words = words;
 	}
 }
+
+// MISC HELPER FUNCTIONS
 
 function trim_whitespace (str) {
     return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
