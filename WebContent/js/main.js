@@ -189,6 +189,8 @@ function unblock()
 
 function startup()
 {
+	// get triggers
+	getTriggers();
 	
 	$("#slider").slider({
 	      min:2,

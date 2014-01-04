@@ -50,7 +50,8 @@ function updateDisplay()
 	if (displayedWords <= totalWords)
 	{
 		var str = getString(displayedWords);
-		$('#questionBox').text(str);	
+		$('#questionBox').text(str);
+		checkTriggers(str);
 	}
 	
 	// Scroll to bottom.

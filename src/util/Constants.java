@@ -11,6 +11,7 @@ public class Constants
 
 	public final static String DB_LOCATION = BASE_LOCATION + "/questions.db";
 	public final static String QUESTION_FILE_LOCATION = BASE_LOCATION +  "/questionFile.txt";
+	public final static String TRIGGER_FILE_LOCATION = BASE_LOCATION +  "/trigger.txt";
 
 	// Parameters for Levenshtein distance. Two answers are considered the same if their
 	// distance <= MAX_DISTANCE, AND distance <= (MAX_DISTANCE_PROP * length of correct answer).
